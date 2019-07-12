@@ -1,15 +1,73 @@
-@font-face {
+/* @font-face {
     font-family: mysteryforest;
     src: url("assets/fonts/mysteryforest.woff") format("woff");
     font-weight: normal;
     font-style: normal;
+} */
+
+.enchilada {
+    width: 80%;
+    margin: auto;
+}
+
+div.jumbotron {
+    font-family: 'Amatic SC', cursive;
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0)
+}
+
+.display-4 {
+    font-size: 2 rem;
+}
+
+.btnRow {
+    height: 60px;
+    position: relative;
+}
+
+.buttonColl {
+    float: left;
+}
+
+.formSpace {
+    float: right;
+    margin-top: 7px;
+}
+
+.btn-lg {
+    display: flex;
+    margin: 0px 5px;
+}
+
+.my-4 {
+    border-top: 1px solid white;
+    margin: 12px 0px;
 }
 
 body {
     background-image: url("../images/forest-lamps-bank-trees-leaves-glade-1442625-pxhere.com.jpg");
     background-size: cover;
-    /* font-family: 'Amatic SC', cursive; */
-    width: 80%;
-    margin: auto;
     color: white;
+}
+
+#gifCont {
+    float: left;
+    border: 1px solid whitesmoke;
+    /* margin-right: 2%; */
+    padding: 0px;
+    /* width: 100%; */
+    height: 200px;
+    background-color: rgba(255, 255, 255, .1)
+}
+
+#buttColl {
+    float: right;
+    border: 1px solid whitesmoke;
+    /* width: 90%; */
+    padding: 0px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, .1);
 }

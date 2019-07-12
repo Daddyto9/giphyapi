@@ -11,14 +11,46 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <!-- cdn's -->
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <title>Document</title>
+    <title>Giphy API Project</title>
 </head>
 
 <body>
-    <h1>hello there</h1>
-    <h2>hi im h2</h2>
+    <div class="enchilada">
+        <!-- jumbotron -->
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to my Giphy API Project Page</h1>
+            <p class="lead">This is a showcase to return popular Gif's from <span id="gifLink"><a href="https://www.giphy.com" target="_blank">Giphy.com</a></span></p>
+            <hr class="my-4">
+            <p>Here are some suggested theme related generators. Click any or type in any term you choose for your own button!</p>
+            <div class="btnRow">
+                <div class="col-md-7 buttonColl">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Click me</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Click me</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Click me</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Click me</a>
+                </div>
+                <div class="col-md-5 formSpace">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search term here..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <hr class="my-4"> -->
+            </div>
+        </div>
+        <!-- containers for results and buttons -->
+        <div class="contRow">
+            <!-- .col-md-8 -->
+            <div class="col-md-7" id="gifCont"></div>
+            <!-- .col-md-4 -->
+            <div class="col-md-5" id="buttColl"></div>
+        </div>
+
+    </div>
 </body>
 <script src="assets/javascript/logic.js"></script>
 
