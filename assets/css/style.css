@@ -37,9 +37,9 @@ div.jumbotron {
     margin-top: 7px;
 }
 
-.btn-lg {
+.btn-md {
     display: flex;
-    margin: 0px 5px;
+    margin: auto;
 }
 
 .my-4 {
