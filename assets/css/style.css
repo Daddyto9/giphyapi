@@ -1,97 +1,108 @@
-/* @font-face {
-    font-family: mysteryforest;
-    src: url("assets/fonts/mysteryforest.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-} */
-
-.enchilada {
-    width: 80%;
-    margin: auto;
-}
-
-div.jumbotron {
-    font-family: 'Amatic SC', cursive;
-    width: 100%;
-    margin: auto;
-    padding: 30px;
-    color: white;
-    background-color: rgba(255, 255, 255, 0)
-}
-
-p.lead {
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-#a {
-    color: greenyellow;
-    text-decoration: none;
-    background-color: transparent;
-}
-
-#a:hover {
-    font-weight: bold;
-}
-
-.newButton {
-    margin: 5px;
-    border-radius: 2.5px;
-    background-color: rgba(173, 255, 47, .5);
-}
-
-button:hover {
-    background-color: greenyellow;
-}
-
-#newGifs:hover {
-    background-color: rgba(173, 255, 47, .5);
-}
-
-.display-4 {
-    font-size: 2 rem;
-}
-
-.btnRow {
-    height: 60px;
-    position: relative;
-}
-
-.formSpace {
-    float: right;
-    margin-top: 7px;
-}
-
-.btn-md {
-    display: flex;
-    margin: auto;
-}
-
-.my-4 {
-    border-top: 1px solid white;
-    margin: 12px 0px;
-}
-
-body {
-    background-image: url("../images/forest-lamps-bank-trees-leaves-glade-1442625-pxhere.com.jpg");
-    background-size: cover;
-    color: white;
-    font-size: 1.3 rem;
-}
-
-p {
-    color: white;
-}
-
-#gifCont {
-    padding: 0px;
-    background-color: rgba(255, 255, 255, .1);
-    display: flexbox;
-}
-
-.search-item {
-    width: 49%;
-    float: left;
-    /* align-content: center; */
-    display: flex;
-}
+                                                                    .enchilada {
+                                                                        width: 80%;
+                                                                        margin: auto;
+                                                                    }
+                                                                    
+                                                                    body {
+                                                                        background-image: url("../images/forest-lamps-bank-trees-leaves-glade-1442625-pxhere.com.jpg");
+                                                                        background-size: cover;
+                                                                        color: white;
+                                                                        font-size: 1.3 rem;
+                                                                    }
+                                                                    
+                                                                    div.jumbotron {
+                                                                        font-family: 'Amatic SC', cursive;
+                                                                        width: 100%;
+                                                                        margin: auto;
+                                                                        padding: 30px;
+                                                                        color: white;
+                                                                        background-color: rgba(255, 255, 255, 0)
+                                                                    }
+                                                                    
+                                                                    p.lead {
+                                                                        font-size: 1.5rem;
+                                                                        font-weight: 300;
+                                                                    }
+                                                                    
+                                                                    #a {
+                                                                        color: greenyellow;
+                                                                        text-decoration: none;
+                                                                        background-color: transparent;
+                                                                    }
+                                                                    
+                                                                    #a:hover {
+                                                                        font-weight: bold;
+                                                                    }
+                                                                    
+                                                                    .newButton {
+                                                                        margin: 5px;
+                                                                        border-radius: 2.5px;
+                                                                        background-color: rgba(173, 255, 47, .5);
+                                                                    }
+                                                                    
+                                                                    button:hover {
+                                                                        background-color: greenyellow;
+                                                                    }
+                                                                    
+                                                                    #newGifs:hover {
+                                                                        background-color: rgba(173, 255, 47, .5);
+                                                                    }
+                                                                    
+                                                                    .display-4 {
+                                                                        font-size: 2 rem;
+                                                                    }
+                                                                    
+                                                                    #gifSpot {
+                                                                        background-color: rgba(255, 255, 255, .0);
+                                                                        border: none;
+                                                                        color: white;
+                                                                    }
+                                                                    
+                                                                    .card-body {
+                                                                        /* background-color: rgba(255, 255, 255, .1); */
+                                                                        color: white;
+                                                                    }
+                                                                    
+                                                                    .btnRow {
+                                                                        height: 60px;
+                                                                        position: relative;
+                                                                    }
+                                                                    
+                                                                    .formSpace {
+                                                                        display: inline;
+                                                                        float: right;
+                                                                        margin-top: 7px;
+                                                                    }
+                                                                    
+                                                                    .form-control {
+                                                                        float: left;
+                                                                    }
+                                                                    
+                                                                    .input-group>.form-control,
+                                                                    .input-group>.form-control-plaintext {
+                                                                        position: relative;
+                                                                        -ms-flex: 1 1 auto;
+                                                                        flex: 1 1 auto;
+                                                                        width: 50%;
+                                                                        margin-bottom: 0;
+                                                                        #search-form {
+                                                                            display: inline;
+                                                                        }
+                                                                        .btn-md {
+                                                                            display: flex;
+                                                                            margin: auto;
+                                                                        }
+                                                                        .my-4 {
+                                                                            border-top: 1px solid white;
+                                                                            margin: 12px 0px;
+                                                                        }
+                                                                        p {
+                                                                            color: white;
+                                                                        }
+                                                                        .search-item {
+                                                                            width: 49%;
+                                                                            float: left;
+                                                                            /* align-content: center; */
+                                                                            display: flex;
+                                                                        }
+                                                                    }

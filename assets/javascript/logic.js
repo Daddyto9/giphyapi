@@ -4,7 +4,7 @@
             console.log("we're connected!");
         })
         // make vars and arrays
-    var firstArray = ["Slenderman", "Blair witch", "Morticia", "Elvira", "Uncle Fester"];
+    var firstArray = ["Slenderman", "Blair witch", "The Conjuring", "The Descent", "The Ring"];
     // func for making buttons
     function makeButtonsVar(firstArray, gottaAddaClass, gifSpotFill) {
         // the empty is to clear for next search and prevent copies of old buttons
@@ -53,23 +53,20 @@
                     }
                 })
         })
-        // having problems animating-still VV
-    $(document).on("click", "aniStillmage", function() {
-            var state = $(this).data("state");
-            if (state == "still") {
-                $(this).attr("src", $(this).data("animated"));
-                $(this).attr("data-state", "animated");
-            } else {
-                $(this).attr("src", $(this).data("still"));
-                $(this).attr("data-state", "still");
+        // fixed animation/still thanks to Shelby's hawkeye! missing a .
+    $(document).on("click", ".aniStillmage", function() {
+        var state = $(this).attr("data-state");
+        if (state == "still") {
+            $(this).attr("src", $(this).data("animated"));
+            $(this).attr("data-state", "animated");
+        } else {
+            $(this).attr("src", $(this).data("still"));
+            $(this).attr("data-state", "still");
 
-                // not working here ∆∆
-                // console.log("state");
-                // console.log(state);
+        }
+    })
 
-            }
-        })
-        // the eq 0 is to prevent input from corruption
+    // the eq 0 is to prevent input from corruption credit to Pat a prog friend 
     $("#newGifs").on("click", function() {
         var nSearchVar = $("input").eq(0).val();
         firstArray.push(nSearchVar);
