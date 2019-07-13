@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- links -->
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon"> -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
+    <link rel="shortcut icon" href="assets/images/fablicon.ico" type="image/x-icon" />
+    <!-- links (getting error for the reset, so I commented it out -->
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <!-- cdn's -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <title>Giphy API Project</title>
 </head>
 
@@ -21,41 +23,35 @@
         <!-- jumbotron -->
         <div class="jumbotron">
             <h1 class="display-4">Welcome to my Giphy API Project Page</h1>
-            <p class="lead">This is a showcase to return popular Gif's from <span id="gifLink"><a href="https://www.giphy.com" target="_blank">Giphy.com</a></span></p>
+            <p class="lead">This is a showcase to return popular Gif's from <span><a id="a" href="https://www.giphy.com" target="_blank">Giphy.com</a></span></p>
             <hr class="my-4">
             <p>Here are some suggested theme related generators. Click any or type in any term you choose for your own button!</p>
-            <div class="btnRow">
-                <div class="col-md-7 buttonColl">
-                    <a class="btn btn-primary btn-md" href="#" role="button" id="btn1">Slender man</a>
-                    <a class="btn btn-primary btn-md" href="#" role="button" id="btn2">Blair Witch</a>
-                    <a class="btn btn-primary btn-md" href="#" role="button" id="btn3">Morticia</a>
-                    <a class="btn btn-primary btn-md" href="#" role="button" id="btn4">Elvira</a>
-                    <a class="btn btn-primary btn-md" href="#" role="button" id="btn5">Uncle Fester</a>
+            <!-- <div class="btnRow"> -->
+            <div class="col-md-7 buttonColl">
+                <div id="buttonSpot"></div>
+            </div>
+            <div class="col-md-5 formSpace">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search your gifs here..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <form id="search-form">
+                        <input class="btn btn-outline-secondary" type="submit" id="newGifs" value="Submit"></input>
+                    </form>
+                    <br>
                 </div>
-                <div class="col-md-5 formSpace">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search term here..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2" id="add-flix">Submit</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- <hr class="my-4"> -->
             </div>
         </div>
-        <!-- containers for results and buttons -->
+        <!-- containers for results -->
         <div id="contRow">
-            <!-- .col-md-8 -->
-            <div class="col-md-7" id="gifCont"></div>
-            <!-- .col-md-4 -->
-            <div class="col-md-5" id="buttColl">
-
+            <div class="col-lg-12" id="gifCont">
+                <div id="gifSpot"></div>
             </div>
         </div>
+    </div>
 
     </div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-<script src="assets/javascript/logic.js"></script>
+<script src="assets/javascript/logic.js" type="text/javascript"></script>
 
 </html>

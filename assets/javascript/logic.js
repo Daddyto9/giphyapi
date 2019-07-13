@@ -1,100 +1,78 @@
-// Testing that we're talking!
-// alert("we're connected");
-
-// I am digging this format (compliments of the sqeaky voice dude from the bootcamp videos)
-
-// Array & variables
-$(document).ready(function() {
-
-    var myButtons = ["SlenderMan", "BlairWitch", "Morticia", "Elvira", "UncleFester"];
-
-    function makeButtons(arrPop, classMaker, makeSpace) {
-        $(makeSpace).empty();
-
-        for (var i = 0; i < arrPop.length; i++) {
-
-            var butn = $("<button>");
-            butn.addClass(classMaker);
-            butn.attr("data-type", arrPop[i]);
-            butn.text(arrPop[i]);
-
-            $(makeSpace).append(butn);
+    // init func and vars
+    $(function() {
+            makeButtonsVar(firstArray, "newButton", "#buttonSpot");
+            console.log("we're connected!");
+        })
+        // make vars and arrays
+    var firstArray = ["Slenderman", "Blair witch", "Morticia", "Elvira", "Uncle Fester"];
+    // func for making buttons
+    function makeButtonsVar(firstArray, gottaAddaClass, gifSpotFill) {
+        // the empty is to clear for next search and prevent copies of old buttons
+        $(gifSpotFill).empty();
+        for (var i = 0; i < firstArray.length; i++) {
+            var tempVar = $("<button>");
+            tempVar.addClass(gottaAddaClass);
+            tempVar.attr("data-type", firstArray[i]);
+            tempVar.text(firstArray[i]);
+            $(gifSpotFill).append(tempVar);
         }
     }
 
-    // functions
-    $(document).onabort("click", ".newButtons", function() {
+    $(document).on("click", ".newButton", function() {
+            var type = $(this).data("type");
+            console.log(type);
+            var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=QOsbjYFwAv2iaNaB20WkDVJv60v5Dkm9&limit=12&rating=R";
 
-        $("#images").empty();
+            // ajax call for response
+            $.ajax({ url: giphyURL, method: "GET" })
+                .done(function(response) {
 
-        $(".newButtons").removeClass("active");
-        $(this).addClass("active");
+                    // check for response
+                    console.log(response);
 
-        var type = $(this).attr("data-type");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=QOsbjYFwAv2iaNaB20WkDVJv60v5Dkm9&limit=10";
+                    for (var i = 0; i < response.data.length; i++) {
 
-        // Ajax
-        $.ajax({
-            url: queryURL,
-            method: "GET"
+                        var respVar = $('<div class="search-item">');
+                        var rating = response.data[i].rating;
+                        var p = $("<p>").text("Rating: " + rating);
+                        var animated = response.data[i].images.original.url;
+                        var still = response.data[i].images.original_still.url;
+                        var image = $("<img>");
+
+                        image.attr("src", still);
+                        image.attr("data-still", still);
+                        image.attr("data-animated", animated);
+                        image.attr("data-state", "still");
+
+                        image.addClass("aniStillmage");
+
+                        respVar.prepend(p);
+                        respVar.prepend(image);
+                        $("#gifSpot").prepend(respVar);
+
+                    }
+                })
         })
+        // having problems animating-still VV
+    $(document).on("click", "aniStillmage", function() {
+            var state = $(this).data("state");
+            if (state == "still") {
+                $(this).attr("src", $(this).data("animated"));
+                $(this).attr("data-state", "animated");
+            } else {
+                $(this).attr("src", $(this).data("still"));
+                $(this).attr("data-state", "still");
 
-        .then(function(response) {
-            var results = response.data;
-
-            for (var i = 0; i < results.length; i++) {
-
-                var newDivPics = $("<div class=\"newPics\">");
-
-                var ratings = results[i].rating;
-
-                var p = $("<p>").text("Rating: " + rating);
-
-                var animated = results[i].images.fixed_height.url;
-                var still = results[i].images.fixed_height_still.url;
-
-                var pics = $("<img>");
-                pics.attr("src", still);
-                pics.attr("data-still", still);
-                pics.attr("data-animate", animated);
-                pics.attr("data-state", still);
-                pics.addClass("pics");
-
-                gifDiv.prepend(p);
-                gifDiv.prepend(pics);
-
-                $("#images").append(gifDiv);
+                // not working here ∆∆
+                // console.log("state");
+                // console.log(state);
 
             }
-        });
-
-    });
-
-    // change state
-    $(document).on("click", ".pics", function() {
-        var state = $(this).attr("data-state")
-
-        if (state === "still") {
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-        } else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-        }
-    });
-
-    // not sure about this, this was "advice" from my prog homie Gil
-    $("#add-flix").on("click", function(event) {
-        event.preventDefault();
-        var newSub = $("input").eq(0).val();
-
-        if (newSub.length > 2) {
-            myButtons.push(newSub);
-        }
-
-        makeButtons(myButtons, "newButtons", "#contRow");
-
-    });
-    makeButtons(myButtons, "newButtons", "#contRow");
-
-});
+        })
+        // the eq 0 is to prevent input from corruption
+    $("#newGifs").on("click", function() {
+        var nSearchVar = $("input").eq(0).val();
+        firstArray.push(nSearchVar);
+        makeButtonsVar(firstArray, "newButton", "#buttonSpot");
+        return false;
+    })

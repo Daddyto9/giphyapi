@@ -1,0 +1,15 @@
+first part
+https://api.giphy.com/v1/ gifs/      search?   api_key=QOsbjYFwAv2iaNaB20WkDVJv60v5Dkm9 & q=
+<-- ∆ Request URL ∆ - rsrc ∆ - function ∆              ∆ api key----------------------∆ ∆ ∆
+                                                                                 endpoint |
+
+API Key
+QOsbjYFwAv2iaNaB20WkDVJv60v5Dkm9
+
+search var id from form
+slenderman
+
+last part
+&limit=12&offset=0&rating=R&lang=en
+
+https://api.giphy.com/v1/gifs/search?api_key=QOsbjYFwAv2iaNaB20WkDVJv60v5Dkm9&q=slenderman&limit=12&offset=0&rating=R&lang=en
