@@ -19,41 +19,54 @@
     }
 
     $(document).on("click", ".newButton", function() {
-            var type = $(this).data("type");
-            console.log(type);
-            var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=QOsbjYFwAv2iaNaB20WkDVJv60v5Dkm9&limit=12&rating=R";
+        var type = $(this).data("type");
+        console.log(type);
+        var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=QOsbjYFwAv2iaNaB20WkDVJv60v5Dkm9&limit=12&rating=R";
 
-            // ajax call for response
-            $.ajax({ url: giphyURL, method: "GET" })
-                .done(function(response) {
+        $(this).hide("slow");
 
-                    // check for response
-                    console.log(response);
+        // ajax call for response
+        $.ajax({ url: giphyURL, method: "GET" })
+            .done(function(response) {
 
-                    for (var i = 0; i < response.data.length; i++) {
+                // check for response
+                console.log(response);
 
-                        var respVar = $('<div class="search-item">');
-                        var rating = response.data[i].rating;
-                        var p = $("<p>").text("Rating: " + rating);
-                        var animated = response.data[i].images.original.url;
-                        var still = response.data[i].images.original_still.url;
-                        var image = $("<img>");
+                for (var i = 0; i < response.data.length; i++) {
 
-                        image.attr("src", still);
-                        image.attr("data-still", still);
-                        image.attr("data-animated", animated);
-                        image.attr("data-state", "still");
+                    var respVar = $('<div class="search-item">');
+                    var rating = response.data[i].rating;
+                    var p = $("<p>").text("Rating: " + rating);
+                    var animated = response.data[i].images.original.url;
+                    var still = response.data[i].images.original_still.url;
+                    var image = $("<img>");
 
-                        image.addClass("aniStillmage");
+                    image.attr("src", still);
+                    image.attr("data-still", still);
+                    image.attr("data-animated", animated);
+                    image.attr("data-state", "still");
 
-                        respVar.prepend(p);
-                        respVar.prepend(image);
-                        $("#gifSpot").prepend(respVar);
+                    image.addClass("aniStillmage");
 
-                    }
-                })
-        })
-        // fixed animation/still thanks to Shelby's hawkeye! missing a .
+                    respVar.prepend(p);
+                    respVar.prepend(image);
+                    $("#gifSpot").prepend(respVar);
+
+                }
+            })
+
+    })
+
+    // test for anchor tag effect
+    // $("a").click(function(event) {
+    //     event.preventDefault();
+    //     $(this).hide("slow");
+    // });
+
+
+
+
+    // fixed animation/still thanks to Shelby's hawkeye! missing a .
     $(document).on("click", ".aniStillmage", function() {
         var state = $(this).attr("data-state");
         if (state == "still") {
