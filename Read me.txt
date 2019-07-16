@@ -1,0 +1,6 @@
+This assignment was a fun one. 
+I made the site with a horror theme. 
+I included the Giphy API and created the form to search and store the search as a clickable button that would disappear on click.
+I would have submitted the assignment on time, but I was having some issues with the logic.
+I was able to fix that with the help of my TA Shelby Reyes, whose keen hawk-like eye spotted that I missed a class indentifier in an argument. That little period miss caused me hours of agony!
+I am happy with the project overall, and thank PennLPS staff for thier support and assistance. 
